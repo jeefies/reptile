@@ -10,4 +10,8 @@ pyenv.cfg
 *.tif
 *.gif
 *.txt
+*.exe
+*.js
+*.html
+*.http
 __pycache__
