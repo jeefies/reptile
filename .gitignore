@@ -10,3 +10,4 @@ pyenv.cfg
 *.tif
 *.gif
 *.txt
+__pycache__
