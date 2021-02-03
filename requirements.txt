@@ -1,0 +1,12 @@
+requests
+aiohttp
+lxml
+selenium
+beautifulsoup4
+scrapy
+pyquery
+tesserocr
+pillow
+pyspider
+# twisted
+# pywin32
