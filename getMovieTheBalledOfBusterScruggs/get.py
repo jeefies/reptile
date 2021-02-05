@@ -41,6 +41,7 @@ def cc():
             with open(fn, 'rb') as rf:
                 wf.write(rf.read())
             print('write', fn)
+atexit.register(cc)
 
 def main():
     thrs = [Thread(None, T_get, f'Movie{i}', (numlist, errorlist, i)) for i in range(MAX_THREAD_NUM)]
