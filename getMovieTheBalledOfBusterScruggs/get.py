@@ -13,6 +13,7 @@ filenumberlist.extend(range(41000, 42000))
 allfn = filenumberlist.copy()
 
 def T_get(fnl, i):
+    """Main thread target"""
     ses = requests.session()
 
     pop = fnl.popleft if i % 2 else fnl.pop
@@ -20,6 +21,7 @@ def T_get(fnl, i):
     while fnl:
         fn = pop()
         u = ur % fn
+        # just get the mpeg-2 stream and write into a file
         r = ses.get(u).content
 
         with open(f"ts/{fn}.ts", 'wb') as f:

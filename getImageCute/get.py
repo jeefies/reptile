@@ -1,14 +1,11 @@
-import re
-import math
-import time
-import html
-import imghdr
-import random
+import re # to search the tags
+import html # to analyze the html &...
+import imghdr # check for the img type
 import atexit
-import requests
-import zipfile
+import requests # main module to get the web source
+import zipfile # archive all files into a zip file
 from threading import Thread
-from collections import deque
+from collections import deque # use thread safe sequence
 
 from rdstr import randstr
 from headers import HEADER
@@ -30,7 +27,6 @@ tag_a = re.compile('<a class="iusc" .*?>')
 murl = re.compile('"murl":"(.*?)"')
 
 page = 200
-#page = 1
 
 startn = 200 * 35
 
@@ -81,11 +77,14 @@ def get(ur, thrs, _i):
     n = 0
     for a in as_:
         text = html.unescape(a)
+        # analyze the html
+        
         try:
             s = murl.search(text).group(1)
         except Exception:
             #print('no murl')
             continue
+
         fn = randstr(s)
         if fn is None:
             #print('exists')
@@ -109,7 +108,7 @@ def get(ur, thrs, _i):
         print('get', fn, 'at', s)
         All.append(fn)
 
-    if n:print('get', n ,'pics')
+    if n : print('get', n ,'pics')
     thrs.remove(this)
     print(this, 'finish tasks', 'rest', len(thrs), 'works')
 

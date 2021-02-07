@@ -83,7 +83,6 @@ def check():
                 check()
     print('check ok..')
 
-#"""
 thrs = [Thread(None, thr, "getNovel %d" % i, (de,))  for i in range(5)]
 for t in thrs:
     t.setDaemon(True)
@@ -95,7 +94,5 @@ try:
     check()
 except KeyboardInterrupt:
     print('\rInterrupt')
-#"""
-#check()
 novel.concat()
 novel.zipall()

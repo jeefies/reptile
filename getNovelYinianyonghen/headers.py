@@ -4,13 +4,3 @@ HEADER = {
         "Accept-Encoding": "gzip",
         "Connection": 'keey-alive',
 }
-
-QRCODE = dict(**HEADER)
-#QRCODE['']
-MOJINSHI = dict(**HEADER)
-MOJINSHI.update({
-        "Referer": "https://py.mojinshi.online/v1/",
-        "Origin": "https://py.mojinshi.online",
-        })
-
-
