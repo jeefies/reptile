@@ -4,6 +4,7 @@ lib64
 include
 pyenv.cfg
 *.jpeg
+*.jpg
 *.png
 *.zip
 *.tiff
